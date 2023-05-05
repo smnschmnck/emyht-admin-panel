@@ -31,7 +31,7 @@ export default function RootLayout({
             </Link>
             <UserButton />
           </nav>
-          <main className="px-16 py-10">{children}</main>
+          <main className="px-16 py-8">{children}</main>
         </body>
       </html>
     </ClerkProvider>

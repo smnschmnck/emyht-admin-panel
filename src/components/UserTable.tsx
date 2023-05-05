@@ -1,8 +1,8 @@
 "use client";
 
-import { DeleteUserButton } from "@/components/ui/DeleteUserButton";
 import Link from "next/link";
 import { useState } from "react";
+import { MagnifyingGlass } from "./icons/MagnifyingGlass";
 
 interface UserEntitiy {
   username: string | null;
@@ -29,33 +29,38 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
-        <h1 className="font-medium text-xl">Users</h1>
-        <input
-          placeholder="Search Users"
-          className="w-72 bg-zinc-100 p-3 rounded-md outline-none outline-offset-0 focus:outline-2 text-sm focus:outline-black"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
+        <h1 className="font-medium text-lg">Users</h1>
+        <div className="flex items-center gap-3 text-xs border bg-zinc-100 border-zinc-100 focus-within:border-black w-fit p-3 rounded-lg transition">
+          <span className="w-4 h-4 text-gray-500">
+            <MagnifyingGlass />
+          </span>
+          <input
+            placeholder="Search Users"
+            className="bg-zinc-100 outline-none w-60 placeholder:text-zinc-500"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
       </div>
       <div className="h-[265px] overflow-y-scroll">
-        <table className="text-left">
+        <table className="text-left text-sm">
           <thead>
             <tr className="border-b border-zinc-300 sticky top-0 z-10 bg-zinc-50">
-              <th className="w-56 pb-4 font-medium">Username</th>
-              <th className="w-96 pb-4 font-medium">E-Mail</th>
-              <th className="pb-4 font-medium">Message Count</th>
+              <th className="w-56 pb-2 font-medium">Username</th>
+              <th className="w-96 pb-2 font-medium">E-Mail</th>
+              <th className="pb-2 font-medium">Message Count</th>
               <th className="w-56" />
             </tr>
           </thead>
           <tbody>
             {filteredUsers.map((user) => (
               <tr key={user.uuid} className="border-b border-zinc-100">
-                <td className="py-8 font-medium">{user.username}</td>
-                <td className="py-8">{user.email}</td>
-                <td className="py-8 text-zinc-400">
+                <td className="py-6 font-medium">{user.username}</td>
+                <td className="py-6">{user.email}</td>
+                <td className="py-6 text-zinc-400">
                   {user.messageCount} Messages
                 </td>
-                <td className="flex py-8 w-56 justify-end">
+                <td className="flex py-6 w-56 justify-end">
                   <Link
                     href={`/users/${user.uuid}`}
                     className="text-blue-600 font-medium hover:underline"

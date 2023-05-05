@@ -16,8 +16,8 @@ export default async function Home() {
     .groupBy(users.uuid);
 
   return (
-    <div className="flex flex-col gap-10">
-      <h1 className="text-3xl font-medium">Admin panel</h1>
+    <div className="flex flex-col gap-6">
+      <h1 className="text-2xl font-medium">Admin panel</h1>
       <UserTable users={allUsers} />
     </div>
   );
