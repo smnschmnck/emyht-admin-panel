@@ -2,7 +2,7 @@ import Image from "next/image";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, UserButton } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${inter.className} bg-zinc-50`}>
-          <nav className="flex px-16 py-4 border-b border-zinc-200">
+          <nav className="flex justify-between px-16 py-4 border-b border-zinc-200">
             <Link href="/">
               <Image
                 width={100}
@@ -29,6 +29,7 @@ export default function RootLayout({
                 src={"https://cdn.emyht.com/emyht-logo.svg"}
               />
             </Link>
+            <UserButton />
           </nav>
           <main className="px-16 py-10">{children}</main>
         </body>
