@@ -42,7 +42,7 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
           />
         </div>
       </div>
-      <div className="h-[265px] overflow-y-scroll">
+      <div className="h-[265px] overflow-y-scroll pr-4">
         <table className="text-left text-sm">
           <thead>
             <tr className="border-b border-zinc-300 sticky top-0 z-10 bg-zinc-50">
@@ -53,6 +53,40 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
             </tr>
           </thead>
           <tbody>
+            {filteredUsers.map((user) => (
+              <tr key={user.uuid} className="border-b border-zinc-100">
+                <td className="py-6 font-medium">{user.username}</td>
+                <td className="py-6">{user.email}</td>
+                <td className="py-6 text-zinc-400">
+                  {user.messageCount} Messages
+                </td>
+                <td className="flex py-6 w-56 justify-end">
+                  <Link
+                    href={`/users/${user.uuid}`}
+                    className="text-blue-600 font-medium hover:underline"
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
+            ))}
+            {filteredUsers.map((user) => (
+              <tr key={user.uuid} className="border-b border-zinc-100">
+                <td className="py-6 font-medium">{user.username}</td>
+                <td className="py-6">{user.email}</td>
+                <td className="py-6 text-zinc-400">
+                  {user.messageCount} Messages
+                </td>
+                <td className="flex py-6 w-56 justify-end">
+                  <Link
+                    href={`/users/${user.uuid}`}
+                    className="text-blue-600 font-medium hover:underline"
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
+            ))}
             {filteredUsers.map((user) => (
               <tr key={user.uuid} className="border-b border-zinc-100">
                 <td className="py-6 font-medium">{user.username}</td>
