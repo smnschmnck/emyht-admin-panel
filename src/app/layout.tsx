@@ -2,6 +2,7 @@ import Image from "next/image";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,20 +17,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-zinc-50`}>
-        <nav className="flex px-16 py-4 border-b border-zinc-200">
-          <Link href="/">
-            <Image
-              width={100}
-              height={34}
-              alt="emyht logo"
-              src={"https://cdn.emyht.com/emyht-logo.svg"}
-            />
-          </Link>
-        </nav>
-        <main className="px-16 py-10">{children}</main>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${inter.className} bg-zinc-50`}>
+          <nav className="flex px-16 py-4 border-b border-zinc-200">
+            <Link href="/">
+              <Image
+                width={100}
+                height={34}
+                alt="emyht logo"
+                src={"https://cdn.emyht.com/emyht-logo.svg"}
+              />
+            </Link>
+          </nav>
+          <main className="px-16 py-10">{children}</main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
