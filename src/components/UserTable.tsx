@@ -27,7 +27,7 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
   });
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 w-fit">
       <div className="flex flex-col gap-4">
         <h1 className="font-medium text-lg">Users</h1>
         <div className="flex items-center gap-3 text-xs border bg-zinc-100 border-zinc-100 focus-within:border-black w-fit p-3 rounded-lg transition">
