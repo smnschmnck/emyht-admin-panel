@@ -1,4 +1,4 @@
-import { DeleteUserButton } from "@/components/ui/DeleteUserButton";
+import { UserTable } from "@/components/UserTable";
 import { db } from "@/db/db";
 import { chatmessages, users } from "@/db/schema/schema";
 import { eq, sql } from "drizzle-orm";
@@ -16,32 +16,9 @@ export default async function Home() {
     .groupBy(users.uuid);
 
   return (
-    <main className="flex p-12 flex-col gap-10 w-full">
-      <h1 className="font-semibold text-xl">Users</h1>
-      <div className="w-fit h-[265px] overflow-y-scroll pr-4">
-        <table className="text-left">
-          <thead>
-            <tr className="border-b border-zinc-200 sticky top-0 z-10 bg-white">
-              <th className="w-56 pb-4 font-semibold">Username</th>
-              <th className="pb-4 w-96 font-semibold">E-Mail</th>
-              <th className="w-56 pb-4 font-semibold">Message Count</th>
-              <th className="pb-4 font-semibold text-right">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {allUsers.map((user) => (
-              <tr key={user.uuid} className="border-b border-zinc-100">
-                <td className="py-8 font-semibold">{user.username}</td>
-                <td className="py-8">{user.email}</td>
-                <td className="py-8">{user.messageCount}</td>
-                <td className="py-8">
-                  <DeleteUserButton userId={user.uuid} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </main>
+    <div className="flex flex-col gap-10">
+      <h1 className="text-3xl font-medium">Admin panel</h1>
+      <UserTable users={allUsers} />
+    </div>
   );
 }
