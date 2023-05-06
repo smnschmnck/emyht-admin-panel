@@ -45,7 +45,7 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
       <div className="h-[265px] overflow-y-scroll pr-4">
         <table className="text-left text-sm">
           <thead>
-            <tr className="border-b border-zinc-300 sticky top-0 z-10 bg-zinc-50">
+            <tr className="border-b border-zinc-300 sticky top-0 z-10 bg-white">
               <th className="w-56 pb-2 font-medium">Username</th>
               <th className="w-96 pb-2 font-medium">E-Mail</th>
               <th className="pb-2 font-medium">Message Count</th>

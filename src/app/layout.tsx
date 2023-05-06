@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} bg-zinc-50`}>
+        <body className={`${inter.className} bg-white`}>
           <nav className="flex justify-between px-16 py-6 border-b border-zinc-200">
             <div className="flex items-center gap-4">
               <Link href="/">
