@@ -7,8 +7,8 @@ import { ClerkProvider, UserButton } from "@clerk/nextjs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "emyht admin console",
-  description: "Admin console for emyht",
+  title: "emyht | Admin panel",
+  description: "Admin panel for emyht",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
                   src={"https://cdn.emyht.com/emyht-logo.svg"}
                 />
               </Link>
-              <span className="text-3xl font-thin text-zinc-400">/</span>
+              <span className="text-xl font-extralight text-zinc-500">|</span>
               <h1 className="font-medium">Admin panel</h1>
             </div>
             <UserButton />
