@@ -30,7 +30,7 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
     <div className="flex flex-col gap-10 w-fit">
       <div className="flex flex-col gap-4">
         <h1 className="font-medium text-lg">Users</h1>
-        <div className="h-10 flex items-center gap-3 text-xs border bg-zinc-100 border-zinc-100 focus-within:border-black w-fit px-3 rounded-lg transition">
+        <div className="h-10 flex items-center gap-3 text-xs border bg-zinc-100 border-zinc-100 focus-within:border-blue-600 w-fit px-3 rounded-lg transition">
           <span className="w-4 h-4 text-gray-500">
             <MagnifyingGlass />
           </span>
