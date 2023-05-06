@@ -54,10 +54,7 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
           </thead>
           <tbody>
             {filteredUsers.map((user) => (
-              <tr
-                key={user.uuid}
-                className="border-b border-zinc-100 hover:bg-zinc-100 transition"
-              >
+              <tr key={user.uuid} className="border-b border-zinc-100">
                 <td className="py-6 font-medium">{user.username}</td>
                 <td className="py-6">{user.email}</td>
                 <td className="py-6 text-zinc-400">
