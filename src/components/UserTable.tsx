@@ -70,40 +70,6 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
                 </td>
               </tr>
             ))}
-            {filteredUsers.map((user) => (
-              <tr key={user.uuid} className="border-b border-zinc-100">
-                <td className="py-6 font-medium">{user.username}</td>
-                <td className="py-6">{user.email}</td>
-                <td className="py-6 text-zinc-400">
-                  {user.messageCount} Messages
-                </td>
-                <td className="flex py-6 w-56 justify-end">
-                  <Link
-                    href={`/users/${user.uuid}`}
-                    className="text-blue-600 font-medium hover:underline"
-                  >
-                    Edit
-                  </Link>
-                </td>
-              </tr>
-            ))}
-            {filteredUsers.map((user) => (
-              <tr key={user.uuid} className="border-b border-zinc-100">
-                <td className="py-6 font-medium">{user.username}</td>
-                <td className="py-6">{user.email}</td>
-                <td className="py-6 text-zinc-400">
-                  {user.messageCount} Messages
-                </td>
-                <td className="flex py-6 w-56 justify-end">
-                  <Link
-                    href={`/users/${user.uuid}`}
-                    className="text-blue-600 font-medium hover:underline"
-                  >
-                    Edit
-                  </Link>
-                </td>
-              </tr>
-            ))}
           </tbody>
         </table>
       </div>
