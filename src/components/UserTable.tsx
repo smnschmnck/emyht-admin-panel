@@ -30,13 +30,13 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
     <div className="flex flex-col gap-10 w-fit">
       <div className="flex flex-col gap-4">
         <h1 className="font-medium text-lg">Users</h1>
-        <div className="flex items-center gap-3 text-xs border bg-zinc-100 border-zinc-100 focus-within:border-black w-fit p-3 rounded-lg transition">
+        <div className="h-10 flex items-center gap-3 text-xs border bg-zinc-100 border-zinc-100 focus-within:border-black w-fit px-3 rounded-lg transition">
           <span className="w-4 h-4 text-gray-500">
             <MagnifyingGlass />
           </span>
           <input
             placeholder="Search Users"
-            className="bg-zinc-100 outline-none w-60 placeholder:text-zinc-500"
+            className="h-full bg-zinc-100 outline-none w-60 placeholder:text-zinc-500"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -54,7 +54,10 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
           </thead>
           <tbody>
             {filteredUsers.map((user) => (
-              <tr key={user.uuid} className="border-b border-zinc-100">
+              <tr
+                key={user.uuid}
+                className="border-b border-zinc-100 hover:bg-zinc-100 transition"
+              >
                 <td className="py-6 font-medium">{user.username}</td>
                 <td className="py-6">{user.email}</td>
                 <td className="py-6 text-zinc-400">
