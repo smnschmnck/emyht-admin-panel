@@ -20,7 +20,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${inter.className} bg-white`}>
-          <nav className="flex justify-between px-16 py-6 border-b border-zinc-200">
+          <nav className="flex justify-between px-8 md:px-16 py-6 border-b border-zinc-200">
             <div className="flex items-center gap-4">
               <Link href="/">
                 <Image
@@ -35,7 +35,7 @@ export default function RootLayout({
             </div>
             <UserButton />
           </nav>
-          <main className="px-16 py-8">{children}</main>
+          <main className="px-8 md:px-16 py-8">{children}</main>
         </body>
       </html>
     </ClerkProvider>
