@@ -1,6 +1,7 @@
 import { db } from "@/db/db";
 import { users } from "@/db/schema/schema";
 import { eq } from "drizzle-orm";
+import { UserDeleteButton } from "./UserDeleteButton";
 
 const UsersPage = async ({ params }: { params: { id: string } }) => {
   const usersRes = await db
@@ -18,6 +19,7 @@ const UsersPage = async ({ params }: { params: { id: string } }) => {
       <p>{user.email}</p>
       <p>{user.emailActive && "active"}</p>
       <p>{user.isAdmin && "admin"}</p>
+      <UserDeleteButton uuid={user.uuid} />
     </div>
   );
 };
