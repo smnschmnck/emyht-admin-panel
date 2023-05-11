@@ -19,6 +19,7 @@ export const Input: React.FC<InputProps> = ({
     )}
     <input
       placeholder={placeholder}
+      autoComplete={"off"}
       className="h-full bg-zinc-100 outline-none w-60 placeholder:text-zinc-500"
       value={value}
       onChange={setValue ? (e) => setValue(e.target.value) : undefined}

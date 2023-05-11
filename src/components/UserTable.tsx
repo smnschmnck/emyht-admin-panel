@@ -35,6 +35,7 @@ export const UserTable: React.FC<{ users: UserEntitiy[] }> = ({ users }) => {
           StartIcon={<MagnifyingGlass />}
           value={searchQuery}
           setValue={setSearchQuery}
+          placeholder="Search users"
         />
       </div>
       <div className="h-[265px] overflow-y-scroll pr-4">
